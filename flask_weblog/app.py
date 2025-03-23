@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -12,7 +12,15 @@ session = Session()
 
 app = Flask(__name__)
 
-
+@app.route("/createpost",methods=["GET","POST"])
+def createpost():
+    if request.method=="POST":
+        formlist=list(request.form.values())
+        post2 = Post(title_des=formlist[0], post_date=formlist[1],
+                post_text_1=formlist[2], post_text_2=formlist[3])
+        session.add_all([post2])
+        session.commit()
+    return render_template("createpost.html")
 
 @app.route("/")
 def index():

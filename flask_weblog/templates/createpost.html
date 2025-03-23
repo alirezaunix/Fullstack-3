@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Post</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+
+    <div class="header">
+        <h2>Create a New Post</h2>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <form method="POST">
+                    <label for="title_des">Title:</label><br>
+                    <input type="text" id="title_des" name="title_des" placeholder="Enter the title of your post..." required><br><br>
+
+                    <label for="post_date">Date:</label><br>
+                    <input type="date" id="post_date" name="post_date" required><br><br>
+
+                    <label for="post_text_1">Post Text Part 1:</label><br>
+                    <input type="text"  id="post_text_1" name="post_text_1" placeholder="Write the first part of your post here..." rows="10" required><br><br>
+
+                    <label for="post_text_2">Post Text Part 2:</label><br>
+                    <input type="text"  id="post_text_2" name="post_text_2" placeholder="Write the second part of your post here..." rows="10"><br><br>
+
+                    <input type="submit" value="Submit Post">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+
+</body>
+</html>
