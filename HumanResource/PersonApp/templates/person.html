@@ -1,0 +1,101 @@
+{% load  static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{p.fname}} {{p.lname}} - Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'styles2.css' %}"> 
+
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Team
+        </a>
+        
+        <div class="profile-card">
+            <div class="profile-header">
+                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="profile-image">
+                <div class="profile-info">
+                    <h1>{{p.fname}} {{p.lname}}</h1>
+                    <span class="title">CEO & Founder</span>
+                    <div class="contact-info">
+                        <span class="contact-item"><i class="fas fa-envelope"></i> sarah@example.com</span>
+                        <span class="contact-item"><i class="fas fa-phone"></i> (555) 123-4567</span>
+                        <span class="contact-item"><i class="fas fa-map-marker-alt"></i> New York, USA</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">About</h2>
+                <div class="section-content">
+                    <p>Visionary leader with 15 years of experience in business strategy and team development. Founded the company in 2010 with a mission to revolutionize the industry. Under my leadership, the company has grown from a small startup to a market leader with over 200 employees worldwide.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Experience</h2>
+                <div class="section-content">
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <span class="item-title">CEO & Founder</span>
+                            <span class="item-date">2010 - Present</span>
+                        </div>
+                        <div class="item-subtitle">Acme Corporation</div>
+                        <p>Founded the company and led it through rapid growth phases. Established company vision, culture, and strategic direction. Oversaw all business operations and executive team.</p>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <span class="item-title">Business Development Manager</span>
+                            <span class="item-date">2005 - 2010</span>
+                        </div>
+                        <div class="item-subtitle">Global Solutions Inc.</div>
+                        <p>Led strategic partnerships and business expansion initiatives. Managed a team of 15 business development professionals.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="section-content">
+                    <div class="education-item">
+                        <div class="item-header">
+                            <span class="item-title">Harvard Business School</span>
+                            <span class="item-date">2003 - 2005</span>
+                        </div>
+                        <div class="item-subtitle">Master of Business Administration (MBA)</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="item-header">
+                            <span class="item-title">Stanford University</span>
+                            <span class="item-date">1999 - 2003</span>
+                        </div>
+                        <div class="item-subtitle">Bachelor of Science in Economics</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="section-content">
+                    <div class="skills-list">
+                        <span class="skill">Leadership</span>
+                        <span class="skill">Strategic Planning</span>
+                        <span class="skill">Business Development</span>
+                        <span class="skill">Team Building</span>
+                        <span class="skill">Public Speaking</span>
+                        <span class="skill">Financial Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

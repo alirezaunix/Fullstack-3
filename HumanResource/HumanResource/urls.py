@@ -20,5 +20,6 @@ from PersonApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('list/',views.index)
+    path('list/',views.index),
+    path('person/<int:id>',views.personPage),
 ]
