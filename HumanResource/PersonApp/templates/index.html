@@ -1,0 +1,41 @@
+{% load  static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People Directory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles.css' %}"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Our Team</h1>
+            <p class="subtitle">Meet the amazing people behind our success</p>
+        </header>
+        
+        <div class="people-list">
+            {% for p in person%}
+            <!-- Person 1 -->
+            <div class="person-card">
+                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="person-image">
+                <div class="person-info">
+                    <h2 class="person-name">{{p.fname}} {{p.lname}}</h2>
+                    <p class="person-title">{{p.age }}</p>
+                    <p class="person-bio">Visionary leader with 15 years of experience in business strategy and team development.</p>
+                    <div class="person-contact">
+                        <span class="contact-item"><i class="fas fa-phone"></i> {{p.phone}}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</body>
+</html>
