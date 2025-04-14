@@ -25,7 +25,7 @@
             <div class="person-card">
                 <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="person-image">
                 <div class="person-info">
-                    <h2 class="person-name">{{p.fname}} {{p.lname}}</h2>
+                    <a href="/person/{{p.id}}"><h2 class="person-name">{{p.fname}} {{p.lname}}</h2></a>
                     <p class="person-title">{{p.age }}</p>
                     <p class="person-bio"> {%if p.gender %} Male {%else%}Female{%endif%}</p> 
                     <div class="person-contact">

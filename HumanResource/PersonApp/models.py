@@ -9,6 +9,8 @@ class Perosn(models.Model):
         default=True, verbose_name="Gender , True=MAN")  # man True//woman False
     phone = models.CharField(max_length=15, verbose_name=" Phone Number",null=True,blank=True)
     birthdate=models.DateField(null=True,blank=True)
+    photo = models.ImageField(null=True, blank=True)
+    
     
     def __str__(self):
         return f"{self.fname} {self.lname}"
