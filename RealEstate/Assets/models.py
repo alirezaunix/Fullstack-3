@@ -7,7 +7,11 @@ class Client(models.Model):
     fullname=models.CharField(max_length=250,verbose_name="Full Name")
     phone1=models.CharField(max_length=15 , verbose_name="Phone 1")
     phone2=models.CharField(max_length=15,null= True,blank=True,verbose_name="Phone 2")
-    clientType=models.BooleanField(default=False,verbose_name="Owner=True, Seeker=False")
+    clientType = models.BooleanField(default=False, verbose_name="Owner=True, Seeker=False", null=True, blank=True,)
+    
+    def __str__(self):
+        return f"{self.fullname}"
+    
     
 class House(models.Model):
         id = models.AutoField(primary_key=True)
@@ -17,5 +21,7 @@ class House(models.Model):
         rooms=models.IntegerField(default=1)
         size=models.IntegerField(default=1)
         buildingyear=models.IntegerField(default=1)
-        owner=models.ForeignKey("Client",on_delete=models.CASCADE)
+        owner=models.ForeignKey(Client,on_delete=models.CASCADE)
         
+        def __str__(self):
+            return f"{self.owner} {self.location}"

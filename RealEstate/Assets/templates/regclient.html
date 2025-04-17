@@ -1,0 +1,66 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information Registration</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles.css' %}"> 
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1><span class="material-icons">person_add</span> Personal Information</h1>
+            </div>
+            
+            <form id="personalInfoForm" method="POST">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone1">Primary Phone Number</label>
+                    <input type="tel" id="phone1" name="phone1" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone2">Secondary Phone Number (Optional)</label>
+                    <input type="tel" id="phone2" name="phone2" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label>You are:</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="owner" name="userType" value="owner" required>
+                            <label for="owner">Owner</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="seeker" name="userType" value="seeker" required>
+                            <label for="seeker">Seeker</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn">
+                    <span class="material-icons">save</span> Save Personal Information
+                </button>
+            </form>
+
+            <div class="nav-links">
+                <a href="property-details.html">
+                    <span class="material-icons">home</span> Go to Property Registration
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

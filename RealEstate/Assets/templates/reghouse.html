@@ -1,0 +1,82 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details Registration</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles.css' %}"> 
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1><span class="material-icons">home_work</span> Property Details</h1>
+            </div>
+            
+            <form id="propertyDetailsForm">
+                <div class="form-group">
+                    <label for="regDate">Registration Date</label>
+                    <input type="date" id="regDate" name="regDate" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Full Address</label>
+                    <textarea id="address" name="address" class="form-control" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rooms">Number of Rooms</label>
+                    <input type="number" id="rooms" name="rooms" class="form-control" min="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="size">Size of House (sq ft)</label>
+                    <input type="number" id="size" name="size" class="form-control" min="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="buildYear">Build Year</label>
+                    <input type="number" id="buildYear" name="buildYear" class="form-control" min="1800" max="2023" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ownerType">Owner Type</label>
+                    <select id="ownerType" name="ownerType" class="form-control" required>
+                        <option value="">Select Owner Type</option>
+                        <option value="individual">Individual Owner</option>
+                        <option value="company">Company/Organization</option>
+                        <option value="government">Government</option>
+                        <option value="trust">Trust/Foundation</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn">
+                    <span class="material-icons">save</span> Save Property Details
+                </button>
+            </form>
+
+            <div class="nav-links">
+                <a href="personal-info.html">
+                    <span class="material-icons">person</span> Go to Personal Information
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('propertyDetailsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Property details saved successfully!');
+            // Here you would typically send the form data to a server
+        });
+    </script>
+</body>
+</html>
